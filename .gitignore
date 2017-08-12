@@ -1,3 +1,15 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+src/bundle.js
+src/bundle.js.map
+.idea
+
+dist/*
+
 # Logs
 logs
 *.log
@@ -56,4 +68,5 @@ typings/
 
 # dotenv environment variables file
 .env
+
 
