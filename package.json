@@ -2,14 +2,16 @@
   "name": "bullseye",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "GNU",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.12.3"
+    "body-parser": "^1.8.0",
+    "compression": "^1.0.11",
+    "express": "^4.8.8",
+    "morgan": "^1.3.0"
   }
 }
