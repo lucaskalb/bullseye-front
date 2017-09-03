@@ -1,22 +1,26 @@
 (function () {
   'use strict';
-  angular.module('app')
+  angular.module('app.signin')
     .controller('SigninController', SigninController);
-    SigninController.$inject = ['signinService'];
 
-    function SigninController(signinService) {
+    SigninController.$inject = [ '$location', 'authService' ];
+
+    function SigninController( $location, authService ) {
       var vm = this;
 
       vm.submit = submit;
 
       function submit() {
-        signinService.submit(vm.formData, function (da) {
-          alert('sucesso');
-          console.log(da);
-        },
-        function (error) {
-          alert(error)
-        })
+        authService.login(vm.formData).then(loginSuccess).catch(loginError);
       }
+
+      function loginSuccess(data) {
+        $location.path('/')
+      }
+
+      function loginError(e) {
+        console.error(e);
+      }
+
     }
 })();

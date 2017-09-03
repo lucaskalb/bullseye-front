@@ -1,20 +1,12 @@
 (function () {
   'use strict';
 
-  angular.module('app', ['ngAnimate',  'ngAria', 'ngRoute', 'ngMaterial'])
-    .constant('api', {
-      url: 'http://localhost:3000'
-    })
-    .config( function( $routeProvider, $locationProvider ) {
+  angular.module('app', [
+      'app.core',
 
-      $routeProvider.when( '/signin', {
-        templateUrl: 'app/signin/signin.html',
-        controller: 'SigninController',
-        controllerAs: 'vm'
-      } );
+      'app.service',
+      'app.signin',
+      'app.dashboard'
+  ]);
 
-      $routeProvider.otherwise( {
-        redirectTo: '/signin'
-      } );
-  });
 })();
